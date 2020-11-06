@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
     $username = "root";
-    $password = "mysql";
+    $password = "password";
     $dbname = "ehealth";
 
     // Create connection
