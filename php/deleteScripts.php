@@ -13,7 +13,7 @@
         } else {
             $msg = "ERRO SQL: ".$sql." - Mensagem do Servidor: ".$conn->error;
         }  
-        echo '<script>alert("'.$msg.'");window.location.href="../index.php";</script>';            
+        echo '<script>alert("'.$msg.'");window.location.href="../medicos.php";</script>';            
     }
 ?>
 
