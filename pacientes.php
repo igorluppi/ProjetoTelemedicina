@@ -1,6 +1,6 @@
 <?php 
   $currentPage = 'pacientes';
-  include 'topSite.php'; // Inclui cabcario padrao
+  include 'topSite.php'; // Inclui cabecalho padrao
 ?>
 
 

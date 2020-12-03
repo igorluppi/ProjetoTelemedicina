@@ -1,5 +1,6 @@
 <?php 
-  include 'topSite.php'; // Inclui cabcario padrao
+  $currentPage = 'historicoMedico';
+  include 'topSite.php'; // Inclui cabecalho padrao
 ?>
 
 
