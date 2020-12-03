@@ -1,5 +1,5 @@
 <?php 
-  include 'topSite.html'; // Inclui cabcario padrao
+  include 'topSite.php'; // Inclui cabcario padrao
 ?>
 
 
