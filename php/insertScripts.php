@@ -45,5 +45,22 @@
         }  
         echo '<script>alert("'.$msg.'");window.location.href="../pacientes.php";</script>';  
 
+    } else if ($tabela == 'tbconsultas') {
+
+        $inputIDPaciente = $_POST['inputIDPaciente'];
+        $inputIDMedico = $_POST['inputIDMedico'];
+        $inputDataConsulta = $_POST['inputDataConsulta'];
+        $inputHorario = $_POST['inputHorario'];
+        
+        $sqlQuery = "INSERT INTO `tbconsultas` (`medico_FK`, `paciente_FK`, `horario`, `data`) 
+                     VALUES ('$inputIDMedico', '$inputIDPaciente', '$inputHorario', '$inputDataConsulta')";
+        
+        if ($conn->query($sqlQuery) === TRUE) {
+            $msg = "Registro incluido com sucesso";            
+        } else {
+            $msg = "ERRO SQL: ".$sql." - Mensagem do Servidor: ".$conn->error;
+        }  
+        echo '<script>alert("'.$msg.'");window.location.href="../consultas.php";</script>';  
+
     }
 ?>

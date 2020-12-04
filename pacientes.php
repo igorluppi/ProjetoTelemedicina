@@ -70,8 +70,8 @@
             <th>Nome</th>
             <th>CPF</th>
             <th>Plano</th>
-            <th>Dt nasc.</th>
-            <th>Dt cadastro.</th>
+            <th>Data de nasc.</th>
+            <th>Data de cadastro</th>
             <th>Ação</th>
           </tr>
         </thead>
@@ -100,9 +100,6 @@
     }
   ?>
 
-
-        
-        <!-- <TR><TD>3</TD><TD>Teste</TD><TD>7987987</TD><TD><i class='fas fa-check text-success'></i></TD><TD>05/11/2020</TD><TD><a href="pacientes.php@altera=3.html"><i class="fas fa-sync-alt text-info mr-3"></i></a><i redirect="php/deleteScripts.php?tabela=tbpacientes&id=3" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TR><TR><TD>5</TD><TD>Fulano de Tal</TD><TD>789.456.888-12</TD><TD><i class='fas fa-check text-success'></i></TD><TD>08/02/1950</TD><TD><a href="pacientes.php@altera=5.html"><i class="fas fa-sync-alt text-info mr-3"></i></a><i redirect="php/deleteScripts.php?tabela=tbpacientes&id=5" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TR><TR><TD>6</TD><TD>Teodoro Silva</TD><TD>123456789-00</TD><TD><i class='fas fa-check text-success'></i></TD><TD>06/11/1990</TD><TD><a href="pacientes.php@altera=6.html"><i class="fas fa-sync-alt text-info mr-3"></i></a><i redirect="php/deleteScripts.php?tabela=tbpacientes&id=6" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TR>   -->
   
           </tbody>           
       </table>
@@ -136,3 +133,4 @@
 
 </html>
 
+<?php $conn->close(); ?>

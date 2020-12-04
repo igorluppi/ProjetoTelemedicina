@@ -26,6 +26,18 @@
             $msg = "ERRO SQL: ".$sql." - Mensagem do Servidor: ".$conn->error;
         }  
         echo '<script>alert("'.$msg.'");window.location.href="../pacientes.php";</script>';            
+    } else if ($tabela == 'tbconsultas') {
+        $id = $_GET['id'];
+        $src = $_GET['src'];
+                
+        $sqlQuery = "DELETE FROM `tbconsultas` WHERE `tbconsultas`.`consulta` = ".$id;
+        
+        if ($conn->query($sqlQuery) === TRUE) {
+            $msg = "Registro apagado com sucesso";            
+        } else {
+            $msg = "ERRO SQL: ".$sql." - Mensagem do Servidor: ".$conn->error;
+        }  
+        echo '<script>alert("'.$msg.'");window.location.href="../historico'.$src.'.php";</script>';  
     }
 ?>
 

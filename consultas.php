@@ -1,9 +1,15 @@
 <?php 
+  include 'php/conn.php';
+
+  $formAction = 'php/insertScripts.php?tabela=tbconsultas';
+  
   $currentPage = 'consultas';
   include 'topSite.php'; // Inclui cabecalho padrao
 ?>
 
-
+<script>
+// update limpar
+</script>
 
 <div class="container-fluid pr-5 pl-5">
   <div class="card mt-4 mb-4">
@@ -11,7 +17,7 @@
       <h3 class="card-title m-0"><i class="fas fa-stethoscope mr-2"></i>Cadastro de Consultas</h3>
     </div>
     <div class="card-body">
-        <form action="https://amorim.eng.br/telemedicina/conteudo-aulas/PGProjetoFinal/ehealth/php/insertScripts.php?tabela=tbconsultas" method="post">
+        <form action="<?=$formAction?>" method="post">
             <div class="form-group ">
                 <div class="row">
                     <div class="col-12 col-lg-6">
@@ -38,7 +44,7 @@
                 <div class="row">
                     <div class="col-12">
                         <input class="btn btn-primary" style="width:120px" type="submit" value="Cadastrar">
-                        <a class="btn btn-secondary" href="consultas.php.html" style="width:120px" role="submit">Limpar</a>
+                        <a class="btn btn-secondary" href="consultas.php" style="width:120px" role="submit">Limpar</a>
                     </div>
                 </div>
             </div>
@@ -52,10 +58,30 @@
             <th>Nome</th>
             <th>CPF</th>
             <th>Plano</th>
-            <th>Dt nasc.</th>
+            <th>Data de nascimento</th>
           </tr>
         </thead>
-        <TR idTB="1" textTB="Paciente Testé" class="cursor-pointer"><TD>1</TD><TD>Paciente Testé</TD><TD>123.123.123-12</TD><TD><i class='fas fa-times text-danger'></i></TD><TD>15/11/1995</TD></TR><TR idTB="3" textTB="Teste" class="cursor-pointer"><TD>3</TD><TD>Teste</TD><TD>7987987</TD><TD><i class='fas fa-check text-success'></i></TD><TD>05/11/2020</TD></TR><TR idTB="5" textTB="Fulano de Tal" class="cursor-pointer"><TD>5</TD><TD>Fulano de Tal</TD><TD>789.456.888-12</TD><TD><i class='fas fa-check text-success'></i></TD><TD>08/02/1950</TD></TR><TR idTB="6" textTB="Teodoro Silva" class="cursor-pointer"><TD>6</TD><TD>Teodoro Silva</TD><TD>123456789-00</TD><TD><i class='fas fa-check text-success'></i></TD><TD>06/11/1990</TD></TR>  
+
+        <?php
+    
+    $sql = "SELECT * FROM `tbpacientes` ORDER BY `paciente` ";
+    $result = $conn->query($sql);  
+    while($row = $result->fetch_assoc()) {
+      $idpaciente = $row["paciente"];
+      $nomepaciente = $row["nome"];
+      $cpfpaciente = $row["cpf"];
+      if ($row['plano'] != 0) {
+        $planopaciente = "<i class='fas fa-check text-success'></i>";
+      } else {
+        $planopaciente = "<i class='fas fa-times text-danger'></i>";
+      }
+      $cadastropaciente = $row["data_cadastro"];
+      $nascimentopaciente = $row["data_nascimento"];
+      
+      echo "<TR idTB='$idpaciente' textTB='$nomepaciente' class='cursor-pointer'><TD>$idpaciente</TD><TD>$nomepaciente</TD><TD>$cpfpaciente</TD><TD>$planopaciente</TD><TD>$nascimentopaciente</TD></TR>";
+    }
+  ?>
+
   
           </tbody>           
       </table>
@@ -71,10 +97,27 @@
             <th>Especialidade</th>
           </tr>
         </thead>
-        <tbody>       
-<TR idTB="6" textTB="Ana Santos" class="cursor-pointer"><TD>6</TD><TD>Ana Santos</TD><TD>78958-RS</TD><TD>Clinica Medica
-</TD></TR><TR idTB="3" textTB="Ana Santos" class="cursor-pointer"><TD>3</TD><TD>Ana Santos</TD><TD>65492-PR</TD><TD>Geriatria</TD></TR><TR idTB="2" textTB="Bruno Souza" class="cursor-pointer"><TD>2</TD><TD>Bruno Souza</TD><TD>65487-SP</TD><TD>Pediatria</TD></TR><TR idTB="4" textTB="Camila Matos" class="cursor-pointer"><TD>4</TD><TD>Camila Matos</TD><TD>654545-RJ</TD><TD>Cardiologia</TD></TR><TR idTB="1" textTB="João da Silva" class="cursor-pointer"><TD>1</TD><TD>João da Silva</TD><TD>987485-SP</TD><TD>Geriatria</TD></TR><TR idTB="19" textTB="João da Silva" class="cursor-pointer"><TD>19</TD><TD>João da Silva</TD><TD>987485-SP</TD><TD>Geriatria</TD></TR><TR idTB="444" textTB="LUISAO" class="cursor-pointer"><TD>444</TD><TD>LUISAO</TD><TD>2525252</TD><TD>Clinica Medica
-</TD></TR><TR idTB="5" textTB="Paula Camargo" class="cursor-pointer"><TD>5</TD><TD>Paula Camargo</TD><TD>56545-SC</TD><TD>Neurologia</TD></TR>
+        <tbody>
+
+        <?php
+    
+    $sql = "SELECT `medico`, `nome`, `CRM`, `especialidade_FK`, `tbespecialidades`.`descricao` AS `especialidadeDescricao`, `data_cadastro` 
+             FROM `tbmedicos`, `tbespecialidades` 
+            WHERE `tbmedicos`.`especialidade_FK` = `tbespecialidades`.`especialidade`
+            ORDER BY `medico`";
+    $result = $conn->query($sql);  
+    while($row = $result->fetch_assoc()) {
+
+      $idmedico = $row["medico"];
+      $nomemedico = $row["nome"];
+      $crmmedico = $row["CRM"];
+      $especialidademedico = $row["especialidadeDescricao"];
+
+      echo "<TR idTB='$idmedico' textTB='$nomemedico' class='cursor-pointer'><TD>$idmedico</TD><TD>$nomemedico</TD><TD>$crmmedico</TD><TD>$especialidademedico</TD></TR>";
+
+    }
+  ?>
+
 
         </tbody>             
       </table>      
@@ -109,3 +152,4 @@
 
 </html>
 
+<?php $conn->close(); ?>

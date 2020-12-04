@@ -1,4 +1,6 @@
-<?php 
+<?php
+  include 'php/conn.php';
+
   $currentPage = 'historicoMedico';
   include 'topSite.php'; // Inclui cabecalho padrao
 ?>
@@ -11,11 +13,12 @@
       <h3 class="card-title m-0">Histórico Médico</h3>
     </div>
     <div class="card-body">
+      <h3>Selecione o Médico</h3>
     <form action="historicoMedico.php.html" method="post">
         <div class="form-group ">          
         <select class="form-control" id="historicoMedico">
             <option value="-1">Todos</option>
-<option  value=3>Ana Santos (id:3)</option><option  value=6>Ana Santos (id:6)</option><option  value=2>Bruno Souza (id:2)</option><option  value=4>Camila Matos (id:4)</option><option  value=1>João da Silva (id:1)</option><option  value=19>João da Silva (id:19)</option><option  value=444>LUISAO (id:444)</option><option  value=5>Paula Camargo (id:5)</option>          </select>
+<option  value=2>Dr. Bruno Souza (id:2)</option><option  value=19>Dr. João da Silva (id:19)</option><option  value=1>Dr. João da Silva&#039; (id:1)</option><option  value=444>Dr. LUISAO (id:444)</option><option  value=6>Dra. Ana Santos (id:6)</option><option  value=3>Dra. Ana Santos (id:3)</option><option  value=4>Dra. Camila Matos (id:4)</option><option  value=445>Dra. Maria Joaquina (id:445)</option><option  value=5>Dra. Paula Camargo (id:5)</option><option  value=448>Fafa de Belem (id:448)</option><option  value=450>dr eu (id:450)</option><option  value=453>ggggg (id:453)</option><option  value=452>ghj (id:452)</option><option  value=449>jose (id:449)</option><option  value=451>rttrrt (id:451)</option>          </select>
 
 
 
@@ -23,11 +26,11 @@
     </form>     
       <hr class="mt-3">
       <h3 class="card-title mt-4 mb-4">Agendamentos</h3>      
-      <table id="tbHistorico" class="display" style="width:100%">
+      <table id="tbHistorico" class="display compact nowrap" style="width:100%">
         <thead>
           <tr>
             <th>Id</th>
-            <th>Médico</th>
+ 
             <th>Paciente</th>
             <th>Data</th>
             <th>Horário</th>
@@ -35,7 +38,7 @@
           </tr>
         </thead>
            <tbody>           
-           <TR><TD>2</TD><TD>Ana Santos (3)</TD><TD>Paciente Testé (3)</TD><TD>18/11/2020</TD><TD>16:40</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=2" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>4</TD><TD>Bruno Souza (2)</TD><TD>Teste (2)</TD><TD>11/11/2020</TD><TD>19:00</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=4" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>3</TD><TD>Ana Santos (3)</TD><TD>Fulano de Tal (3)</TD><TD>05/11/2020</TD><TD>20:00</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=3" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>5</TD><TD>Paula Camargo (5)</TD><TD>Teodoro Silva (5)</TD><TD>01/12/2020</TD><TD>12:00</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=5" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR>  
+           <TR><TD>18</TD><TD>Paciente Testé <span class="idsTable">(id:1)</span></TD><TD>10/11/2020</TD><TD>12:57</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=18" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>4</TD><TD>Teste <span class="idsTable">(id:3)</span></TD><TD>11/11/2020</TD><TD>19:00</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=4" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>19</TD><TD>Teste <span class="idsTable">(id:3)</span></TD><TD>13/11/2020</TD><TD>17:20</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=19" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>3</TD><TD>Fulano de Tal <span class="idsTable">(id:5)</span></TD><TD>05/11/2020</TD><TD>20:00</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=3" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>7</TD><TD>Fulano de Tal <span class="idsTable">(id:5)</span></TD><TD>01/11/2020</TD><TD>22:22</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=7" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>5</TD><TD>Teodoro Silva <span class="idsTable">(id:6)</span></TD><TD>01/12/2020</TD><TD>12:00</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=5" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>15</TD><TD>Teodoro Silva <span class="idsTable">(id:6)</span></TD><TD>19/11/2020</TD><TD>01:04</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=15" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR><TR><TD>17</TD><TD>Teodoro Silva <span class="idsTable">(id:6)</span></TD><TD>27/11/2020</TD><TD>12:00</TD><TD><i redirect="php/deleteScripts.php?tabela=tbconsultasMedico&id=17" class="fas fa-trash-alt text-danger" onclick="dialogDelete(this)" style="cursor:pointer"></i></TD></TD></TR>  
   
           </tbody>           
       </table>
@@ -71,3 +74,4 @@
 
 </html>
 
+<?php $conn->close(); ?>

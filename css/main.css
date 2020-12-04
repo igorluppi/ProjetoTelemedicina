@@ -14,3 +14,12 @@
   .cursor-pointer{
     cursor: pointer;
   }
+  
+  .bg-dark{
+	background-color:#202e3d!important;
+  }
+  
+  .idsTable{
+	font-size:0.9rem;
+	color:#555;
+  }
