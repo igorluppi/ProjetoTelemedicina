@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 04-Dez-2020 às 11:33
+-- Tempo de geração: 04-Dez-2020 às 19:42
 -- Versão do servidor: 8.0.22-0ubuntu0.20.04.3
 -- versão do PHP: 7.4.3
 
@@ -133,7 +133,7 @@ CREATE TABLE `tbusuarios` (
   `senha` varchar(50) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `privilegio` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `tbusuarios`
