@@ -11,21 +11,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Session Exemplo</title>
+
+    <style>
+.bg-index {
+    background-image: url('vendor/bg.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center;
+}
+
+</style>
 </head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="css/estilos.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<body>
+<body class="bg-index">
     <div id="login">
         
         <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-row" class="row justify-content-center align-items-center" style="padding-top: 10rem;">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="validar.php" method="post">
-                            <h3 class="text-center p-3">Acessar</h3>
+                            <h3 class="text-center p-3">Acessar E-Health</h3>
                             <div class="form-group">
                                 <label for="input-login" class="text-labels">Username:</label><br>
                                 <input type="text" name="input-login" id="input-login" class="form-control">

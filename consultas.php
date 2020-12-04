@@ -1,4 +1,5 @@
 <?php 
+  include "adm_check.php";
   include 'php/conn.php';
 
   $formAction = 'php/insertScripts.php?tabela=tbconsultas';

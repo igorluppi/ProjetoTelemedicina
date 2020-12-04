@@ -46,29 +46,15 @@ function select_current($currentPage, $item_value) {
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading bg-light text-primary">
-        <i class="fas fa-laptop-medical mr-2"></i>Painel E-Health</div>
+        <i class="fas fa-laptop-medical mr-2"></i>E-Health Buscas</div>
       <div class="list-group list-group-flush">
         <a href="#" style="cursor: default;" onclick="return(false)" class="list-group-item list-group-item-action bg-dark text-white">
-        <i class="fas fa-user-plus mr-2"></i>Cadastros</a>
-        <a href="medicos.php" class="list-group-item list-group-item-action <?= select_current($currentPage, 'medicos') ?>">
-          <i class="fas fa-user-md mr-2"></i>Médicos</a>
-        <a href="pacientes.php" class="list-group-item list-group-item-action <?= select_current($currentPage, 'pacientes') ?>">
-        <i class="fas fa-user-injured mr-2"></i>Pacientes</a>
-        <a href="consultas.php" class="list-group-item list-group-item-action <?= select_current($currentPage, 'consultas') ?>">
-        <i class="fas fa-stethoscope mr-2"></i>Consultas</a>
-        <a href="#" style="cursor: default;" onclick="return(false)" class="list-group-item list-group-item-action bg-dark text-white">
         <i class="fas fa-binoculars mr-2"></i>Buscas</a>
-        <a href="historicoMedico.php" class="list-group-item list-group-item-action <?= select_current($currentPage, 'historicoMedico') ?>">
-        <i class="fas fa-id-card mr-2"></i>Histórico Médico</a>
-        <a href="historicoPaciente.php" class="list-group-item list-group-item-action <?= select_current($currentPage, 'historicoPaciente') ?>">
-        <i class="far fa-id-card mr-2"></i>Histórico
-          Paciente</a>
-
-          
+        <a href="medicosConsulta.php" class="list-group-item list-group-item-action <?= select_current($currentPage, 'medicosConsulta') ?>">
+          <i class="fas fa-user-md mr-2"></i>Médicos</a>
+    
         <a href="home.php" class="list-group-item list-group-item-action bg-dark text-white mt-5"><i class="fas fa-home mr-2"></i>Home</a>
         <a href="index.php" class="list-group-item list-group-item-action bg-dark text-white" style="border-top: 1px solid rgba(255,255,255,.125);"><i class="fas fa-sign-out-alt mr-2"></i>Log-out</a>
-        
-        
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

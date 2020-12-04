@@ -1,4 +1,5 @@
 <?php
+  include "adm_check.php";
   include 'php/conn.php';
 
   $buscaID = $_GET['id'];

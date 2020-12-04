@@ -1,4 +1,5 @@
 <?php
+  include "adm_check.php";
   include "php/conn.php";
 
   $alteraID = $_GET['altera'];
