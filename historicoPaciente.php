@@ -23,6 +23,8 @@
   function is_selected($valor, $ref) {
     if ($valor == $ref) {
       return "selected";
+    } else {
+      return "";
     }
   }
 ?>
